@@ -1,0 +1,203 @@
+---
+title: "Ejemplo de CV"
+author: Aline Pingarroni
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['dd_cv.css', 'resume']
+    self_contained: true
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr)
+library(knitr)
+source("cv_printing_functions.r")
+
+# Carga los datos de tu hoja de hoja de cálculo de google
+#En este chunk sólo modifica la dirección de tu CV
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1iuzJh7isW4omxbfv04zlOMwojN_VKCLN8g9wh_SJfT4/edit?usp=sharing",  
+  pdf_mode = params$pdf_mode
+ )
+
+```
+
+
+```{r}
+# Corrige la alinacion de los puntos
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+
+Aside
+================================================================================
+```{r}
+## Construya una red interactiva de puestos coloreados por sección
+# y conectados si ocurrieron en el mismo año
+#datadrivencv::build_network_logo(CV$entries_data)
+```
+
+![avatar](Foto_6_Aline.png){width=70%}
+
+Contacto {#contact}
+--------------------------------------------------------------------------------
+```{r informacion de contacto}
+CV %>% print_contact_info()
+```
+
+<br>
+
+
+Lenguajes de Programación {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_skill_bars()
+```
+
+
+Idiomas {#languages}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_languages()
+```
+
+Nota {#disclaimer}
+--------------------------------------------------------------------------------
+
+Realizado con [**pagedown**](https://github.com/rstudio/pagedown). 
+
+Este código está disponible en [EveliaCoss/CV](https://github.com/EveliaCoss/CV) y es impulsado por [nstrayer/cv](https://github.com/nstrayer/cv).
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Aline Pingarroni {#title} 
+--------------------------------------------------------------------------------
+
+```{r Perfil-Lineas de investigacion}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
+
+Puesto actual:
+```{r Perfil-puesto actual}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("Puestro_actual") 
+```
+
+Institución:
+```{r Perfil-Institucion}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("Institucion") 
+```
+
+Laboratorio:
+```{r Perfil-Laboratorio}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("Laboratorio") 
+```
+
+1. Trayectoria Académica {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+1.1 Educación
+--------------------------------------------------------------------------------
+
+```{r educacion}
+CV %<>% print_section('educacion')
+```
+
+2. Experiencia laboral {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r Experiencia en investigacion}
+CV %<>% print_section('experiencia_laboral')
+```
+
+<!-- Saltos de pagina -->
+<br>
+
+3. Formación de recursos humanos {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+3.1 Docencia
+--------------------------------------------------------------------------------
+
+```{r Clases}
+CV %<>% print_section('docencia')
+```
+
+
+3.2 Tesis dirigidas
+--------------------------------------------------------------------------------
+```{r Tesistas}
+CV %<>% print_section('tesistas')
+```
+
+
+4. Contribuciones en Ciencia de datos {data-icon=chart-line}
+--------------------------------------------------------------------------------
+
+```{r Manuscritos científicos}
+CV %<>% print_section('data_science')
+```
+
+
+Publicaciones {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r Articulos academicos}
+CV %<>% print_section('articulos_academicos')
+```
+
+
+
+Ponencias y posters {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+```{r Presentaciones y posters}
+CV %<>% print_section('ponencias_posters')
+```
+
+
+Cursos, talleres y certificaciones {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r Cusos}
+CV %<>% print_section('asistencia_cursos')
+```
+
+
+Comunicación Científica {data-icon=atom}
+--------------------------------------------------------------------------------
+
+```{r Comunicacion cintifica}
+CV %<>% print_section('comunicacion_ciencia')
+```
+
+
+```{r incluir links}
+CV %<>% print_links()
+```
