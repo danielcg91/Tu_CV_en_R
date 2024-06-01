@@ -1,32 +1,3 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
-<style>
-body {
-  background-color: white;
-  color: #4B2849;
-}
-
-h1 {
-  color: #4B2849; /* Color para h1 (ejemplo: tomato) */
-}
-
-h2 {
-  color: #4B2849; /* Color para h2 (ejemplo: orange) */
-}
-
-h3 {
-  color: #4B2849; /* Color para h3 (ejemplo: yellow) */
-}
-
-h4, h5, h6 {
-  color: #4B2849; /* Color para h4, h5, h6 (ejemplo: greenyellow) */
-}
-
-</style>
-
 
 <p align="center">
     <img src="R_Ladies_Morelia.png" style="width:155px;height:100px;">
@@ -42,10 +13,8 @@ h4, h5, h6 {
 </p>
 
 <p style="text-align: center;">
-  Autora: [Aline Pingarroni](https://github.com/AlinePingarroni)
+  Autora:[Aline Pingarroni](https://github.com/AlinePingarroni)
 </p>
-
-
 
 #### Materiales informativos
 Este material fue modificado del taller que impartió Dra. [EveliaCoss](https://github.com/EveliaCoss/Make_yourCV) el cual se construyó a partir de las siguientes fuentes:
