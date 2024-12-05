@@ -84,7 +84,7 @@ Nota {#disclaimer}
 
 Realizado con [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Este código está disponible en [EveliaCoss/CV](https://github.com/EveliaCoss/CV) y es impulsado por [nstrayer/cv](https://github.com/nstrayer/cv).
+Este código está disponible en [AlinePingarroni/CV](https://github.com/AlinePingarroni/Tu_CV_en_R).
 
 Last updated on `r Sys.Date()`.
 
