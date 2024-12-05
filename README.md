@@ -46,7 +46,7 @@ Este paquete se basa en la filosofía de datos impulsados (data-driven), lo que 
 | `CV_Espanol.rmd`                  | Un archivo RMarkdown con varias secciones completadas. Editable.                                                                                                                                                                                              |
 | `dd_cv.css`               | Un conjunto personalizado de estilos CSS que se basan en la plantilla de "currículum" predeterminada "Pagedown". Editable.                                                                                                                                                                       |
 | `render_cv.r`             | Script para crear su CV en PDF y HTML al mismo tiempo.                                                                                                                                                                                            |
-| `cv_printing_functions.r` | Una serie de funciones que realizan el trabajo sucio de convertir los datos de su hoja de cálculo en Markdown/html y hace que esa salida funcione para la impresión de PDF. Por ejemplo, Reemplazar enlaces con superíndices y una sección de enlaces, ajustar el CSS para tener en cuenta las peculiaridades de la impresión en Chrome, etc.|
+| `cv_printing_functions.r` | Una serie de funciones que realizan el trabajo sucio de convertir los datos de la hoja de cálculo en Markdown/html en una salida que funcione para la impresión de PDF. Por ejemplo, Reemplazar enlaces con superíndices y una sección de enlaces, ajustar el CSS para tener en cuenta las peculiaridades de la impresión en Chrome, etc.|
 
 ### 2.2 Paquetes necesarios 📕
 
